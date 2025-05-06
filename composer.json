@@ -1,17 +1,36 @@
 {
     "name": "ketng/tintuc",
-    "description": "Trang tin t?c s? d?ng Laravel",
-    "license": "MIT",
+    "description": "Trang tin tức sử dụng Laravel",
+    "type": "project",
+    "require": {
+      "php": "^8.0",
+      "laravel/framework": "^8.0"
+    },
     "autoload": {
-        "psr-4": {
-            "Ketng\\Tintuc\\": "src/"
-        }
+      "psr-4": {
+        "App\\": "app/"
+      },
+      "classmap": [
+        "database/"
+      ]
+    },
+    "scripts": {
+      "post-root-package-install": [
+        "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+      ],
+      "post-create-project-cmd": [
+        "@php artisan key:generate"
+      ]
     },
     "authors": [
-        {
-            "name": "Nghiabe",
-            "email": "nghiantk.21it@vku.udn.vn"
-        }
+      {
+        "name": "Nghiabe",
+        "email": "nghiantk.21it@vku.udn.vn"
+      }
     ],
-    "require": {}
-}
+    "config": {
+      "optimize-autoloader": true,
+      "sort-packages": true
+    }
+  }
+  
