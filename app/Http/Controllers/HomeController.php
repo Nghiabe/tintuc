@@ -11,7 +11,7 @@ use App\TinTuc;
 use App\User;
 use App\Slide;
 
-class HomecconTroller extends Controller
+class HomeConttroller extends Controller
 {
     //
 	public function __construct(){ // Trang chủ và trang liên hệ đều cần dữ liệu của thanh menu và slide để hiển thị ra, nên ta dùng view share để cả 2 trang đều có biến này để sử dụng.
