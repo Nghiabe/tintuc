@@ -1,11 +1,19 @@
+# nixpacks.toml - cấu hình build Laravel trên Railway với PHP 8.2
+
 [phases.setup]
-nixPkgs = ["php82", "php82Packages.composer"]
+nixPkgs = ["php82", "php82Packages.composer", "openssl", "nginx"]
 
 [phases.install]
-cmds = ["composer install --no-dev --optimize-autoloader"]
+cmds = [
+  "composer install --no-dev --optimize-autoloader"
+]
 
 [phases.build]
-cmds = ["php artisan config:cache", "php artisan route:cache", "php artisan view:cache"]
+cmds = [
+  "php artisan config:cache",
+  "php artisan route:cache",
+  "php artisan view:cache"
+]
 
 [start]
 cmd = "php artisan serve --host=0.0.0.0 --port=$PORT"
